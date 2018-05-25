@@ -38,7 +38,7 @@ import { DocketTimelineContentDetailsComponent } from './docket-timeline-content
 import { TimelineSearchPipe } from './docket-timeline-content/timeline-search.pipe';
 import { DocketHomeComponent } from './docket-home/docket-home.component';
 import { DocketRegisterComponent } from './docket-register/docket-register.component';
-
+import { TimelineSidenavfilterPipe } from './docket-timeline-content/timeline-sidenavfilter.pipe';
 import { DocketTableContentComponent } from './docket-timeline-content/docket-table-content/docket-table-content.component';
 
 
@@ -53,7 +53,7 @@ import { DocketTableContentComponent } from './docket-timeline-content/docket-ta
     TimelineSearchPipe,
     DocketHomeComponent,
     DocketRegisterComponent,
-
+    TimelineSidenavfilterPipe,
     DocketTableContentComponent
 
 
