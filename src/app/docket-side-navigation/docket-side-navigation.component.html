@@ -25,7 +25,7 @@
       <label for="applicationType">  Applications</label>
       <br>
       <mat-form-field [color]="'primary'">
-        <mat-select placeholder="Application" required [(ngModel)]="application" name="application">
+        <mat-select placeholder="Application" required [(ngModel)]="sideNavData.application" name="application">
           <mat-option *ngFor="let option of sideNavFormData.applicationOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -35,7 +35,7 @@
       <label for="sources">  Sources</label>
       <br>
       <mat-form-field [color]="'primary'">
-        <mat-select placeholder="Source" required [(ngModel)]="source" name="source">
+        <mat-select placeholder="Source" required [(ngModel)]="sideNavData.source" name="source">
           <mat-option *ngFor="let option of sideNavFormData.sourcesOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -45,7 +45,7 @@
       <label for="ipAddress"> IP-Address</label>
       <br>
       <mat-form-field [color]="'primary'">
-        <mat-select placeholder="IP-Address" required [(ngModel)]="ipAddress" name="ipAddress">
+        <mat-select placeholder="IP-Address" required [(ngModel)]="sideNavData.ipAddress" name="ipAddress">
           <mat-option *ngFor="let option of sideNavFormData.ipAddressOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -55,7 +55,7 @@
       <label for="applicationType"> Levels</label>
       <br>
       <mat-form-field [color]="'primary'">
-        <mat-select placeholder="Level" required [(ngModel)]="level" name="level">
+        <mat-select placeholder="Level" required [(ngModel)]="sideNavData.level" name="level">
           <mat-option *ngFor="let option of sideNavFormData.levelOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -66,7 +66,7 @@
       <label for="createdBy"> User Name</label>
       <br>
       <mat-form-field [color]="'primary'">
-        <mat-select placeholder="User Name" required [(ngModel)]="createdBy" name="createdBy">
+        <mat-select placeholder="User Name" required [(ngModel)]="sideNavData.createdBy" name="createdBy">
           <mat-option *ngFor="let option of sideNavFormData.createdByOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -77,7 +77,7 @@
       <label for="createdBy"> Event Status</label>
       <br>
       <mat-form-field [color]="'primary'">
-        <mat-select placeholder="Event Status" required [(ngModel)]="status" name="status">
+        <mat-select placeholder="Event Status" required [(ngModel)]="sideNavData.status" name="status">
           <mat-option *ngFor="let option of sideNavFormData.statusOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -91,13 +91,13 @@
       <!-- Date Filter -->
       <label for="applicationType" style="font-size: 15px;"> From - Date</label>
       <mat-form-field>
-        <input matInput [matDatepicker]="fromPicker" placeholder="Choose a date" name="fromDate" [(ngModel)]="fromDate" required>
+        <input matInput [matDatepicker]="fromPicker" placeholder="Choose a date" name="fromDate" [(ngModel)]="sideNavData.fromDate" required>
         <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
         <mat-datepicker #fromPicker></mat-datepicker>
       </mat-form-field>
       <label for="applicationType" style="font-size: 15px;"> To - Date</label>
       <mat-form-field>
-        <input matInput [matDatepicker]="toPicker" placeholder="Choose a date" name="toDate" [(ngModel)]="toDate" required>
+        <input matInput [matDatepicker]="toPicker" placeholder="Choose a date" name="toDate" [(ngModel)]="sideNavData.toDate" required>
         <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
         <mat-datepicker #toPicker></mat-datepicker>
       </mat-form-field>

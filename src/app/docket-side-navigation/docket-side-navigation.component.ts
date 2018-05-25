@@ -35,6 +35,16 @@ export class DocketSideNavigationComponent implements OnInit {
 
   sideNavDisplay = false;
   arrowPointingLeft = true; //Used for HTML Purpose
+  sideNavData: DocketSideFilterSelectModel = {
+    application: "", source: "",
+    ipAddress: "",
+    level: "",
+    createdBy: "",
+    status: "",
+    fromDate: "",
+    toDate: ""
+  };
+
 
   sideNavFormData: DocketSideNavFormModel = {
     applicationOptions: [],
