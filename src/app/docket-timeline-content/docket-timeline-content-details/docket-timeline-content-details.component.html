@@ -1,0 +1,18 @@
+<div class="docket-session-details">
+  <div class="closeDialog" (click)="closeDialog()">
+    <h4>X</h4></div>
+  <div class="docket-session-details-header">
+    <h2>AUDIT DETAILS</h2>
+    <hr>
+  </div>
+  <div class="docket-session-details-body">
+    <div class="row" *ngFor="let detail of sessionDetails; let i = index">
+      <div class="col-md-2">
+        <h5><b>{{ sessionDetailTitles[i] }}:</b></h5>
+      </div>
+      <div class="col-md-10">
+        <h5>{{ detail }}</h5>
+      </div>
+    </div>
+  </div>
+</div>

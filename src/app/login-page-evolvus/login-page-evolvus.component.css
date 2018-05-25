@@ -1,0 +1,99 @@
+
+.form-login {
+
+    background-color:		#66B9BF;
+    padding:40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    bottom: 30px;
+    top: 25px;
+    border:4px solid white;
+    border-radius: 11px;
+    box-shadow: 8px 8px 32px 2px #909090	;
+    width:280px;
+
+}
+
+
+.loginCenter h4{
+    position: relative;
+    top: 10px;
+	  margin-top: -30%;
+    margin-bottom: 30%;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    color: white;
+    font-weight: 300;
+}
+
+.form-login  .form-group{
+	margin-bottom:15px;
+  position: relative;
+
+}
+
+
+
+.form-control{
+  font-family: sans-serif;
+	font-size:12px;
+  color:  #03213f;
+
+}
+
+
+.loginPage > .row {
+    margin-top: 5%;
+}
+
+.mat-raised-button:disabled{
+background-color: #white;
+}
+
+
+button:hover{
+  cursor: pointer;
+  box-shadow: 8px 8px 20px #07889B;
+  opacity: 1;
+}
+
+.mat-raised-button{
+  font-family:serif;
+  margin-top: 5%;
+  color: #07889B;
+  background-color: white;
+  opacity: 0.6;
+  font-size: 16px;
+  cursor: pointer;
+}
+#registerBtn{
+  background-color: #696969;
+  color: white;
+  border: 1px solid white;
+}
+.form-control-feedback.glyphicon{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  pointer-events: all;
+  cursor: pointer;
+  font-size: 18px;
+  border: 0.5px solid white;
+}
+
+.form-control-feedback.glyphicon.glyphicon-user {
+  background-color: #148fbc;
+}
+
+.form-control-feedback.glyphicon.glyphicon-eye-close {
+  background-color: #d14f4f;
+
+}
+.form-control-feedback.glyphicon.glyphicon-eye-open {
+  background-color: #79c0f7;
+
+
+}

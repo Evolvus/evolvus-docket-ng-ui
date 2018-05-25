@@ -1,0 +1,26 @@
+<div class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a style="text-align: center; color: white;" class="navbar-brand" href="/homePage">DOCKET AUDIT SERVER <sup>2.0</sup></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li style="top: 1em; color: white;right: 5em;">{{ liveTime | date: 'medium'}}</li>
+      <li><i class="fa fa-exclamation-circle"></i></li>
+      <li on-mouseover="openNotifications()" id="bellIcon" style="opacity: 1;" on-mouseout="openNotifications()"><i class="fa fa-bell"></i></li>
+      <li style="text-align: center; top:8px; right:15px; color: white; ">
+        <h5>Welcome, {{ username }}!</h5></li>
+      <li><a (click)="logout()">Logout</a></li>
+    </ul>
+  </div>
+</div>
+<div class="Notifications" *ngIf="isNotificationOpen">
+  <ul class="list-notifications">
+    <li>Docket Server will be under maintenance on 21/4/2018,6pm - 8pm! Inconvenience is Regretted!</li>
+    <li>New Feature 'Forgot Password' will be released soon!</li>
+    <li>Please Reset your Password within 30 days!</li>
+    <li>New Feature 'Bookmarks' will be available soon!</li>
+    <li>Please do not leave your Systems Unlocked or Else be Ready to Pay for Samosas!</li>
+    <li>What else? Don't know!</li>
+  </ul>
+  <!-- <button style = "color: black; background-color: transparent; border: none;" (click)="openNotifications()">X</button> -->
+</div>

@@ -1,0 +1,80 @@
+<div class="timeline-header">
+  <div class="navbar navbar-default" style="font-family: 'serif';">
+    <div class="navbar-header">
+      <div class="navbar-brand">
+        <i class="fa fa-clock-o" style="font-size: 23px; color: #f4a24c;"></i> DOCKET - REPORT
+      </div>
+    </div>
+    <div class="nav navbar-nav">
+      <span style=" float: right; position: relative; right: 25px; top: 5px; font-size: 18px;"><i style = "color:#A0522D "class = "fa fa-search"></i></span>
+      <input id="searchBar" type="text" class="form-control input-md" style="width: 20em; font-size: 12px;" placeholder="Search Timeline by Application.." [(ngModel)]="searchText">
+    </div>
+  </div>
+</div>
+<app-docket-table-content *ngIf="filterApplied()"></app-docket-table-content>
+<button *ngIf="showData" class="btn btn-danger" style="float: right; margin-right: 6.5em; margin-top: 1em; " (click)="closeTable()">Close</button>
+<div class="demo">
+  <div class="row">
+    <div class="col-lg-12">
+      <h4><i class="fa fa-clock-o"></i>  Timeline</h4>
+      <div class="main-timeline">
+
+        <br>
+        <div class="timeline" *ngFor="let docket of
+         (searchPipeUsed ? (docketSessionList  |  timelineSearch : searchText) : (docketSessionList  |  timelineSidenavfilter : sideNavFilterData)); let i = index">
+
+          <div class="timeline-icon" *ngIf="docket.status === 'SUCCESS'">
+            <span><i class="fa fa-thumbs-up"></i></span>
+          </div>
+          <div class="timeline-icon" *ngIf="docket.status === 'FAILURE' ">
+            <span><i class="fa fa-thumbs-down"></i></span>
+          </div>
+
+          <div class="timeline-content" (click)="openDialog(docket)" style="text-align: center;">
+
+            <h4 *ngIf="docket.status === 'SUCCESS'  " style="color: Green;">{{ docket.name }} Event</h4>
+            <h4 *ngIf="docket.status === 'FAILURE' " style="color: Red;">{{ docket.name }} Event</h4>
+
+            <h6>Time: {{ docket.eventDateTime }}</h6>
+            <p style="font-size: 12px; font-weight: 200;" class="description">
+              {{ docket.details }}
+            </p>
+          </div>
+        </div>
+
+
+        <div class="NoResults">
+          <div class="NoTimelineData" *ngIf="docketSessionList.length === 0 && searchPipeUsed === undefined">
+            <i *ngIf="showBulb" class="fa fa-lightbulb-o" style="font-size: 5em; color: #FFD700;"></i>
+            <i *ngIf="!showBulb" class="fa fa-lightbulb-o" style="font-size: 5em; color: #FFA500;"></i>
+            <br>
+            <h5 style="margin-left: -4.5em; margin-top: 2em;"> Please Wait! Fetching data.....</h5>
+          </div>
+
+          <div class="ServerNotResponding" style="margin-left: 2em; margin-top: 2em;">
+            <h4 *ngIf="noOfTimesTryingToFetchData > 1 && docketSessionList.length === 0 && searchPipeUsed === undefined" style="color: #2F4F4F; font-family: 'Josefin Sans';">Seems like the Server is dispirited! We will try to Inspirit him. Meanwhile, Grab a Cup of Coffee <i class = "fa fa-coffee" style = "color:#C86428; font-size: 20px;"></i>.. and hold tight!</h4>
+          </div>
+
+          <div class="NoResultDisplaySearch" *ngIf="(docketSessionList  |  timelineSearch : searchText).length === 0 && searchPipeUsed ">
+            <div class="NoResultHeader Search">
+              <h4><i style = "font-size: 20px; color: #A0522D;" class = "fa fa-search"></i>   SEARCH</h4></div>
+            <hr>
+
+            <div class="NoResultBody Search">
+              <p>No Results to Display for your Search! Try Timeline Filter!</p>
+            </div>
+
+            <button mat-button mat-small (click)="resetTimeline()">CLOSE</button>
+          </div>
+
+        </div>
+
+        <br>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>

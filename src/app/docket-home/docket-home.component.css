@@ -1,0 +1,30 @@
+.container-fluid{
+  position: relative;
+
+}
+app-header{
+  overflow-y: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+app-docket-side-navigation{
+  position: absolute;
+  margin-top: 5%;
+  scroll-behavior: smooth;
+  z-index: 1;
+}
+app-docket-timeline-content{
+  position: absolute;
+  margin-top: 4%;
+  margin-left: 20%;
+  z-index: -1;
+
+}
+app-docket-timeline-search{
+
+  position: fixed;
+  margin-top:5%;
+  margin-left: 79%;
+  z-index: 1;
+}

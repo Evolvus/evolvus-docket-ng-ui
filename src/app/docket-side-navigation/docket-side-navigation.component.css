@@ -1,0 +1,89 @@
+.sideNav {
+
+  height: 90%;
+  width: 240px;
+  position: fixed;
+  background-color: transparent;
+  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  float: left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: 0.4s;
+
+  /* border-top: 3px solid #aeb9c4;
+  border-left: 3px solid #aeb9c4; */
+}
+@media (max-width: 1024px) {
+  .sideNav{
+    display: none;
+  }
+}
+#sideNavBar::-webkit-scrollbar {
+  width: 5px;
+  background-color:#aeb9c4;
+}
+
+#sideNavBar::-webkit-scrollbar-thumb {
+  /* border-radius: 5px; */
+  background-color:#008080 ;
+  width: 1px;
+}
+
+#timelineHeader {
+  font-size: 22px;
+  color: #008080;
+  font-family: "Times New Roman";
+  /* font-weight: bold; */
+}
+
+
+.sideNavContent {
+  margin-top: 5%;
+  padding-top: 1em;
+}
+
+.fa {
+  font-size: 20px;
+  margin-right: 6px;
+  color: #A0522D;
+}
+
+.fa.fa-level-up {
+  font-size: 22px;
+  margin-right: 8px;
+}
+
+label {
+  font-size: 24px;
+  color: #008080;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 300;
+}
+
+.mat-option:hover {
+  background-color: #008080;
+  color: white;
+}
+
+.sideNavButton{
+  position: relative;
+  float: right;
+  text-align: center;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  border: 0;
+  border-radius: 0em;
+  background-color: none;
+}
+
+.fa.fa-arrow-circle-left {
+  font-size: 20px;
+
+
+}
+
+.fa.fa-bars {
+  font-size: 30px;
+}

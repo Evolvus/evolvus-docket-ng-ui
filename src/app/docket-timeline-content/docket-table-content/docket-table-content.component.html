@@ -1,0 +1,44 @@
+<div class="example-container mat-elevation-z8">
+  <div class="col-md-8">
+    <h4><i class="fa fa-table"> </i>    Docket Audit Data Table</h4>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="application">
+      <mat-header-cell *matHeaderCellDef> Application </mat-header-cell>
+      <mat-cell *matCellDef="let docket"> {{docket.application}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Event Name </mat-header-cell>
+      <mat-cell *matCellDef="let docket"> {{docket.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="source">
+      <mat-header-cell *matHeaderCellDef> Source </mat-header-cell>
+      <mat-cell *matCellDef="let docket"> {{docket.source}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="eventDateTime">
+      <mat-header-cell *matHeaderCellDef> Date Time </mat-header-cell>
+      <mat-cell *matCellDef="let docket"> {{docket.eventDateTime}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let docket"> {{docket.status}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row)"></mat-row>
+
+  </mat-table>
+
+  <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[ 5, 10, 20]" [showFirstLastButtons]="true">
+  </mat-paginator>
+</div>
+<div class="NoRecords" *ngIf="noRecordsToDisplay">
+  <h4 style="color: red; margin-left: 4.5em;">No Records Found. Please Modify your Filter Options!</h4>
+</div>
