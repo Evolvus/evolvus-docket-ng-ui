@@ -26,7 +26,6 @@ import { SideNavFormContentService } from './docket-side-navigation/docket-side-
 // SecondaryModules
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { TooltipModule } from "ngx-tooltip";
 import { AppRoutingModule } from './app-routing.module';
 // Components
 import { AppComponent } from './app.component';
@@ -65,7 +64,6 @@ import { DocketTableContentComponent } from './docket-timeline-content/docket-ta
     HttpModule,
     HttpClientModule,
     MatInputModule,
-    TooltipModule,
     MatNativeDateModule,
     MatDatepickerModule,
     MatProgressSpinnerModule,
