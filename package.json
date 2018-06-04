@@ -57,5 +57,9 @@
   },
   "publishConfig": {
     "registry": "http://10.10.69.203:8081/repository/npm-private/"
-  }
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
+    }
+
 }
