@@ -48,15 +48,15 @@ export class DocketRegisterComponent implements OnInit {
   }
 
   onFormSubmit(form: NgForm) {
-    this.username = form.value.username;
-    this.userpassword = form.value.userpassword;
-    this.userRegisterCredentials.emit({
-      username: this.username,
-      useremailID: this.useremailID,
-      userpassword: this.userpassword,
-      userconfirmpassword: this.userconfirmpassword
-
-    });
+    // this.username = form.value.username;
+    // this.userpassword = form.value.userpassword;
+    // this.userRegisterCredentials.emit({
+    //   username: this.username,
+    //   useremailID: this.useremailID,
+    //   userpassword: this.userpassword,
+    //   userconfirmpassword: this.userconfirmpassword
+    //
+    // });
     this.router.navigate(['loginPage']);
 
   }

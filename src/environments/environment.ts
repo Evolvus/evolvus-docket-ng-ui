@@ -6,5 +6,4 @@
 export const environment = {
   production: false,
   docketURL: 'http://192.168.1.115:3000'
-
 };

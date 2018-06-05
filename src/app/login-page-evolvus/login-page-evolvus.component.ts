@@ -15,28 +15,6 @@ export class LoginPageEvolvusComponent implements OnInit {
   ngOnInit() {
 
 
-    if (window.navigator && window.navigator.geolocation) {
-      window.navigator.geolocation.getCurrentPosition(
-        position => {
-          const geolocationPosition = position;
-          console.log(position);
-        },
-        error => {
-          switch (error.code) {
-            case 1:
-              console.log('Permission Denied');
-              break;
-            case 2:
-              console.log('Position Unavailable');
-              break;
-            case 3:
-              console.log('Timeout');
-              break;
-          }
-        }
-      );
-    };
-
   }
   hideCloseBtn = true;
 
@@ -72,22 +50,22 @@ export class LoginPageEvolvusComponent implements OnInit {
   }
 
   onFormSubmit(form: NgForm) {
-    this.username = form.value.username;
-    this.userpassword = form.value.userpassword;
-    this.userCredentials.emit({
-      username: this.username,
-      userpassword: this.userpassword
-    });
-
-    this.http.post('http://192.168.1.115:8080/login',
-      {
-        email: this.username,
-        password: this.userpassword
-      }
-    )
-      .subscribe((response: Response) => {
-        console.log(response);
-      });
+    // this.username = form.value.username;
+    // this.userpassword = form.value.userpassword;
+    // this.userCredentials.emit({
+    //   username: this.username,
+    //   userpassword: this.userpassword
+    // });
+    //
+    // this.http.post('http://192.168.1.115:8080/login',
+    //   {
+    //     email: this.username,
+    //     password: this.userpassword
+    //   }
+    // )
+    //   .subscribe((response: Response) => {
+    //     console.log(response);
+    //   });
     this.router.navigate(['homePage']);
   }
 
