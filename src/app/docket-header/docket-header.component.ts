@@ -38,4 +38,6 @@ export class DocketHeaderComponent implements OnInit {
     this.isNotificationOpen = !this.isNotificationOpen;
   }
 
+
+
 }
