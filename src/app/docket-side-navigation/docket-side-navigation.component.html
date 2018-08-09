@@ -26,7 +26,7 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="Application" required [(ngModel)]="sideNavData.application" name="application">
-          <mat-option *ngFor="let option of sideNavFormData.applicationOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData?.applicationOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
 
@@ -37,7 +37,7 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="Source" required [(ngModel)]="sideNavData.source" name="source">
-          <mat-option *ngFor="let option of sideNavFormData.sourcesOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData?.sourcesOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
@@ -47,20 +47,20 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="IP-Address" required [(ngModel)]="sideNavData.ipAddress" name="ipAddress">
-          <mat-option *ngFor="let option of sideNavFormData.ipAddressOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData?.ipAddressOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
       <!-- Levels Type -->
-      <span><i class="fa fa-level-up"> </i></span>
+      <!-- <span><i class="fa fa-level-up"> </i></span>
       <label for="applicationType"> Levels</label>
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="Level" required [(ngModel)]="sideNavData.level" name="level">
-          <mat-option *ngFor="let option of sideNavFormData.levelOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData?.levelOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
-      <br>
+      <br> -->
 
       <!-- Username Type -->
       <span><i class="fa fa-user"> </i></span>
@@ -68,7 +68,7 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="User Name" required [(ngModel)]="sideNavData.createdBy" name="createdBy">
-          <mat-option *ngFor="let option of sideNavFormData.createdByOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData?.createdByOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
@@ -79,7 +79,7 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="Event Status" required [(ngModel)]="sideNavData.status" name="status">
-          <mat-option *ngFor="let option of sideNavFormData.statusOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData?.statusOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>

@@ -79,24 +79,26 @@ export class DocketSideNavigationComponent implements OnInit {
   }
 
   filterTimeline(filterForm: NgForm) {
-
     this.docketTimelineContent.sideNavFilterApplied.next(true);
-    this.http.get(this.docketURL + '/getByFilter',
+    this.http.get(`${this.docketURL}/api/audit`,
       {
         params: {
           application: filterForm.form.value.application,
           source: filterForm.form.value.source,
           ipAddress: filterForm.form.value.ipAddress,
-          level: filterForm.form.value.level,
           createdBy: filterForm.form.value.createdBy,
           status: filterForm.form.value.status,
-          fromDate: filterForm.form.value.fromDate.toString(),
-          toDate: filterForm.form.value.toDate.toString()
+          fromDate: filterForm.form.value.fromDate,
+          toDate: filterForm.form.value.toDate
         }
       })
 
-      .subscribe((docketFilteredSessionList: any[]) => {
-        this.docketSideForm.filterDataObtained.next(docketFilteredSessionList);
+      .subscribe((response:any) => {
+        console.log(response);
+        if(response!=null){
+this.docketSideForm.filterDataObtained.next(response.data);
+        }
+        
       });
 
   }

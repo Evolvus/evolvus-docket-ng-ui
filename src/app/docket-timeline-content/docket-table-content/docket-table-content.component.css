@@ -29,3 +29,10 @@
   -ms-flex-align: center;
   align-items: center;
 }
+
+.mat-column-source{
+  flex: 0 0 4em;
+}
+.mat-column-status{
+  flex: 0 0 5em;
+}

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { DocketSession } from '../shared/docket-session-model';
 import { Http, Headers, Response } from '@angular/http';
@@ -10,7 +11,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class DocketTimelineContentService {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
   }
   docketURL = environment.docketURL;
   filterTypeChanged = new Subject<DocketSideFilterSelectModel>();
@@ -31,14 +32,14 @@ export class DocketTimelineContentService {
   }
 
   getDocketFromDB() {
-    this.http.get(`${this.docketURL}/audit`)
-      .map((response: Response) => {
-        const docketSessionListDB: DocketSession[] = response.json();
-        return docketSessionListDB;
-      })
-      .subscribe((docketSessionList: DocketSession[]) => {
-        this.docketSessionList = docketSessionList;
-        this.docketSessionDataChanged.next(this.docketSessionList.slice());
+    this.http.get(`${this.docketURL}/api/audit`)
+      .subscribe((response: any) => {
+        if(response!=null){
+
+          this.docketSessionList = response.data;
+        
+          this.docketSessionDataChanged.next(this.docketSessionList.slice());
+        }
       });
   }
 

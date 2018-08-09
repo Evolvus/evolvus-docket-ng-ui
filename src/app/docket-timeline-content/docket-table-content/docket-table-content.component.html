@@ -22,7 +22,7 @@
 
     <ng-container matColumnDef="eventDateTime">
       <mat-header-cell *matHeaderCellDef> Date Time </mat-header-cell>
-      <mat-cell *matCellDef="let docket"> {{docket.eventDateTime}} </mat-cell>
+      <mat-cell *matCellDef="let docket"> {{docket.eventDateTime | date: 'medium'}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="status">

@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { DocketSideNavFormModel } from '../shared/docket-side-nav-form.model';
 import { OnInit, Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { Subject } from 'rxjs/Subject';
 import { DocketSession } from '../shared/docket-session-model';
 import { environment } from '../../environments/environment';
@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SideNavFormContentService implements OnInit {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
   docketURL = environment.docketURL;
@@ -31,12 +31,10 @@ export class SideNavFormContentService implements OnInit {
 
   getFormData() {
 
-    this.http.get(this.docketURL + '/getFilterOptions')
-      .map((response: Response) => {
-        return response.json();
-      })
-      .subscribe((docketFilteredSessionList: DocketSideNavFormModel) => {
-        this.sideNavFormDataChanged.next(docketFilteredSessionList);
+    this.http.get(`${this.docketURL}/api/getFilterOptions`)
+      .subscribe((response: any) => {
+        console.log(response, "getFilterOptions");
+        this.sideNavFormDataChanged.next(response.data);
       });
 
 

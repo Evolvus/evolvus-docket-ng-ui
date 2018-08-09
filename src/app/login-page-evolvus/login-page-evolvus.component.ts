@@ -23,7 +23,7 @@ export class LoginPageEvolvusComponent implements OnInit {
 
   // @ViewChild('loginForm') loginForm: NgForm;
 
-  eyeOpen = true;
+  eyeOpen = false;
 
   @Input() loginFormName: string = 'DOCKET - AUDIT';
 
@@ -33,7 +33,7 @@ export class LoginPageEvolvusComponent implements OnInit {
 
   userpassword: string;
 
-
+  passwordType: string = "password";
 
   @Output() userCredentials = new EventEmitter<{ username: string, userpassword: string }>();
 
@@ -42,10 +42,10 @@ export class LoginPageEvolvusComponent implements OnInit {
   changeInputType() {
     this.eyeOpen = !this.eyeOpen;
     if (!this.eyeOpen) {
-      (<HTMLInputElement>document.getElementById('user-password')).type = "text";
+this.passwordType = "password";
     }
     else {
-      (<HTMLInputElement>document.getElementById('user-password')).type = "password";
+this.passwordType = "text";
     }
   }
 

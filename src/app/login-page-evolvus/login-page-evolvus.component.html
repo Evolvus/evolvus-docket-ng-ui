@@ -26,11 +26,11 @@
 
           <div class="form-group has-feedback pass">
 
-            <input id="user-password" type="password" class="form-control" placeholder="Password" name="userpassword" tooltip="Password is required!" ngModel required />
-            <span *ngIf="eyeOpen; else eyeClosed" class="form-control-feedback  glyphicon glyphicon-eye-close" (click)="changeInputType()" title="Show Password"></span>
+            <input id="user-password" type="{{passwordType}}" class="form-control" placeholder="Password" name="userpassword" tooltip="Password is required!" ngModel required />
+            <span *ngIf="eyeOpen; else eyeClosed" class="form-control-feedback  glyphicon glyphicon-eye-close" (click)="changeInputType()" title="Hide Password"></span>
 
             <ng-template #eyeClosed>
-              <span class="form-control-feedback  glyphicon glyphicon-eye-open" title="Hide Password" (click)="changeInputType()"></span>
+              <span class="form-control-feedback  glyphicon glyphicon-eye-open" title="Show Password" (click)="changeInputType()"></span>
             </ng-template>
 
           </div>

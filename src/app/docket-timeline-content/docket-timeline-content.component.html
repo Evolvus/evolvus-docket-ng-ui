@@ -32,13 +32,10 @@
 
           <div class="timeline-content" (click)="openDialog(docket)" style="text-align: center;">
 
-            <h4 *ngIf="docket.status === 'SUCCESS'  " style="color: Green;">{{ docket.name }} Event</h4>
+            <h4 *ngIf="docket.status === 'SUCCESS'  " style="color: Green;">{{ docket.name }}   Event</h4>
             <h4 *ngIf="docket.status === 'FAILURE' " style="color: Red;">{{ docket.name }} Event</h4>
 
-            <h6>Time: {{ docket.eventDateTime }}</h6>
-            <p style="font-size: 12px; font-weight: 200;" class="description">
-              {{ docket.details }}
-            </p>
+            <h6>Time: {{ docket.eventDateTime | date: 'medium'}}</h6>
           </div>
         </div>
 
