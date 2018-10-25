@@ -9,12 +9,12 @@ import { DocketTableContentComponent } from './docket-timeline-content/docket-ta
 
 const appRoutes: Routes = [
 
-{path: '', redirectTo: 'loginPage', pathMatch: 'full'},
-{path: 'logout', redirectTo: 'loginPage', pathMatch: 'full'},
-{path: 'loginPage', component: LoginPageEvolvusComponent},
-{path: 'homePage', component: DocketHomeComponent},
-{path: 'registerPage', component: DocketRegisterComponent},
-{path: 'table', component: DocketTableContentComponent}
+  { path: '', component: DocketHomeComponent },
+  // { path: 'logout', redirectTo: 'loginPage', pathMatch: 'full' },
+  // { path: 'loginPage', component: LoginPageEvolvusComponent },
+  { path: 'homePage', component: DocketHomeComponent },
+  { path: 'registerPage', component: DocketRegisterComponent },
+  { path: 'table', component: DocketTableContentComponent }
 ];
 
 @NgModule({
@@ -22,13 +22,13 @@ const appRoutes: Routes = [
 
   ],
   imports: [
-RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes)
   ],
   exports: [
-RouterModule
+    RouterModule
   ]
 })
 
-export class AppRoutingModule{
+export class AppRoutingModule {
 
 }
