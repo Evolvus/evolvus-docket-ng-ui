@@ -30,7 +30,7 @@ export class DocketSideNavigationComponent implements OnInit {
     this.docketSideForm.getDataIfNotAvailable();
     this.docketSideForm.sideNavFormDataChanged.subscribe((docketSessionData: DocketSideNavFormModel) => {
       this.sideNavFormData = docketSessionData;
-    });
+    });  
   }
 
   sideNavDisplay = false;
@@ -85,7 +85,7 @@ export class DocketSideNavigationComponent implements OnInit {
         params: {
           application: filterForm.form.value.application,
           source: filterForm.form.value.source,
-          ipAddress: filterForm.form.value.ipAddress,
+          // ipAddress: filterForm.form.value.ipAddress,
           createdBy: filterForm.form.value.createdBy,
           status: filterForm.form.value.status,
           fromDate: filterForm.form.value.fromDate,
@@ -94,7 +94,6 @@ export class DocketSideNavigationComponent implements OnInit {
       })
 
       .subscribe((response:any) => {
-        console.log(response);
         if(response!=null){
 this.docketSideForm.filterDataObtained.next(response.data);
         }

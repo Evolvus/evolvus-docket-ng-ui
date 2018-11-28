@@ -7,24 +7,24 @@
 
     <ng-container matColumnDef="application">
       <mat-header-cell *matHeaderCellDef> Application </mat-header-cell>
-      <mat-cell *matCellDef="let docket"> {{docket.application}} </mat-cell>
+      <mat-cell style="font-size: 14px;" *matCellDef="let docket"> {{docket.application}} </mat-cell>
     </ng-container>
-
+ 
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef> Event Name </mat-header-cell>
-      <mat-cell *matCellDef="let docket"> {{docket.name}} </mat-cell>
-    </ng-container>
+      <mat-cell  style="font-size: 11px;"*matCellDef="let docket"> {{docket.name}} </mat-cell>
+    </ng-container>  
 
     <ng-container matColumnDef="source">
       <mat-header-cell *matHeaderCellDef> Source </mat-header-cell>
-      <mat-cell *matCellDef="let docket"> {{docket.source}} </mat-cell>
+      <mat-cell style="font-size: 9px;" *matCellDef="let docket"> {{docket.source}} </mat-cell>
     </ng-container>
-
+ 
     <ng-container matColumnDef="eventDateTime">
       <mat-header-cell *matHeaderCellDef> Date Time </mat-header-cell>
-      <mat-cell *matCellDef="let docket"> {{docket.eventDateTime | date: 'medium'}} </mat-cell>
+      <mat-cell style="font-size: 10px;" *matCellDef="let docket"> {{docket.eventDateTime | date: 'medium'}} </mat-cell>
     </ng-container>
-
+ 
     <ng-container matColumnDef="status">
       <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
       <mat-cell *matCellDef="let docket"> {{docket.status}} </mat-cell>

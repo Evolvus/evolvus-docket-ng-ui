@@ -29,12 +29,11 @@ export class SideNavFormContentService implements OnInit {
     }, 50000);
   }
 
-  getFormData() {
+  getFormData() { 
 
     this.http.get(`${this.docketURL}/api/getFilterOptions`)
       .subscribe((response: any) => {
-        console.log(response, "getFilterOptions");
-        this.sideNavFormDataChanged.next(response.data);
+     this.sideNavFormDataChanged.next(response.data);
       });
 
 
