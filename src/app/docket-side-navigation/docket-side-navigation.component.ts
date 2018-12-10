@@ -27,7 +27,7 @@ export class DocketSideNavigationComponent implements OnInit {
 
   ngOnInit() {
 
-    this.docketSideForm.getDataIfNotAvailable();
+    this.docketSideForm.getDataIfNotAvailable(undefined);  
     this.docketSideForm.sideNavFormDataChanged.subscribe((docketSessionData: DocketSideNavFormModel) => {
       this.sideNavFormData = docketSessionData;
     });  
@@ -45,6 +45,10 @@ export class DocketSideNavigationComponent implements OnInit {
     toDate: ""
   };
 
+  getFormData(){
+    this.docketSideForm.getDataIfNotAvailable(this.sideNavData.application);
+
+  }
 
   sideNavFormData: DocketSideNavFormModel = {
     applicationOptions: [],
@@ -92,7 +96,6 @@ export class DocketSideNavigationComponent implements OnInit {
           toDate: filterForm.form.value.toDate
         }
       })
-
       .subscribe((response:any) => {
         if(response!=null){
 this.docketSideForm.filterDataObtained.next(response.data);

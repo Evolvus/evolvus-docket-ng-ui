@@ -25,12 +25,12 @@
       <label for="applicationType">  Applications</label>
       <br>
       <mat-form-field [color]="'primary'">
-        <mat-select placeholder="Application" required [(ngModel)]="sideNavData.application" name="application">
+        <mat-select placeholder="Application" required [(ngModel)]="sideNavData.application" (ngModelChange)="getFormData()" name="application">
           <mat-option *ngFor="let option of sideNavFormData?.applicationOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> 
 
-      <br>
+      <br> 
       <!-- SourceType -->
       <span><i class="fa fa-arrow-circle-down"></i></span>
       <label for="sources">  Sources</label>
