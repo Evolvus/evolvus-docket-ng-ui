@@ -26,9 +26,10 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="Application" required [(ngModel)]="sideNavData.application" (ngModelChange)="getFormData()" name="application">
-          <mat-option *ngFor="let option of sideNavFormData?.applicationOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData.applicationOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field> 
+      <i class="fa fa-spinner fa-spin" *ngIf="!filterOptionsLoaded"></i>
 
       <br> 
       <!-- SourceType -->
@@ -37,9 +38,11 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="Source" required [(ngModel)]="sideNavData.source" name="source">
-          <mat-option *ngFor="let option of sideNavFormData?.sourcesOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData.sourcesOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
+      <i class="fa fa-spinner fa-spin" *ngIf="filterOptionsLoaded && !applicationSelectionChanged"></i>
+ 
       <br>
       <!-- IP-Address Type -->
       <!-- <span><i class="fa fa-desktop"> </i></span>
@@ -68,9 +71,10 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="User Name" required [(ngModel)]="sideNavData.createdBy" name="createdBy">
-          <mat-option *ngFor="let option of sideNavFormData?.createdByOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData.createdByOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
+      <i class="fa fa-spinner fa-spin" *ngIf="filterOptionsLoaded && !applicationSelectionChanged"></i>
       <br>
 
       <!-- EventStatus Type -->
@@ -79,7 +83,7 @@
       <br>
       <mat-form-field [color]="'primary'">
         <mat-select placeholder="Event Status" required [(ngModel)]="sideNavData.status" name="status">
-          <mat-option *ngFor="let option of sideNavFormData?.statusOptions" value="{{ option }}">{{ option }}</mat-option>
+          <mat-option *ngFor="let option of sideNavFormData.statusOptions" value="{{ option }}">{{ option }}</mat-option>
         </mat-select>
       </mat-form-field>
       <br>

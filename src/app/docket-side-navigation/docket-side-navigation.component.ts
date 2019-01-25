@@ -23,13 +23,17 @@ export class DocketSideNavigationComponent implements OnInit {
   }
   docketURL = environment.docketURL;
   filterApplied = new Subject<DocketSideFilterSelectModel>();
-
+  filterOptionsLoaded: boolean = false;
+  applicationSelectionChanged: boolean = false;
 
   ngOnInit() {
 
-    this.docketSideForm.getDataIfNotAvailable(undefined);  
-    this.docketSideForm.sideNavFormDataChanged.subscribe((docketSessionData: DocketSideNavFormModel) => {
-      this.sideNavFormData = docketSessionData;
+    this.docketSideForm.getFormData("").subscribe((response: any) => {
+      this.filterOptionsLoaded = true; 
+      this.applicationSelectionChanged = true;
+      console.log('docketSessionData', response);
+      this.sideNavFormData.applicationOptions = response.data.applicationOptions;
+      console.log(this.sideNavFormData.applicationOptions);
     });  
   }
 
@@ -46,8 +50,16 @@ export class DocketSideNavigationComponent implements OnInit {
   };
 
   getFormData(){
-    this.docketSideForm.getDataIfNotAvailable(this.sideNavData.application);
-
+    this.applicationSelectionChanged = false;
+    this.sideNavFormData.sourcesOptions = [];
+    this.sideNavFormData.createdByOptions = [];
+    console.log("this.sideNavData.application", this.sideNavData.application);
+    this.docketSideForm.getFormData(this.sideNavData.application).subscribe((response: any) => {
+      this.filterOptionsLoaded = true;
+      this.applicationSelectionChanged = true;
+      this.sideNavFormData.createdByOptions = response.data.createdByOptions;
+      this.sideNavFormData.sourcesOptions = response.data.sourcesOptions;
+    });  
   }
 
   sideNavFormData: DocketSideNavFormModel = {

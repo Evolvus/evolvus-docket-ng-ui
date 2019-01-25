@@ -22,22 +22,19 @@ export class SideNavFormContentService implements OnInit {
   filterDataObtained = new Subject<DocketSession[]>();
 
 
-  getDataIfNotAvailable(applicationName) {
-    this.getFormData(applicationName);
-    setInterval(() => {
-      this.getFormData(applicationName);
-    }, 50000);
-  }
+  // getDataIfNotAvailable(applicationName) {
+  //  return this.getFormData(applicationName);
+  // }
 
-  getFormData(applicationName) { 
-    this.http.get(`${this.docketURL}/api/getFilterOptions`,{
+  getFormData(applicationName) {
+   return this.http.get(`${this.docketURL}/api/getFilterOptions`,{
       params:{
         application: applicationName
       }
-    }) 
-      .subscribe((response: any) => {
-     this.sideNavFormDataChanged.next(response.data);
-      });
+    });
+    //   .subscribe((response: any) => {
+    //  this.sideNavFormDataChanged.next(response.data);
+    //   });
 
 
 
