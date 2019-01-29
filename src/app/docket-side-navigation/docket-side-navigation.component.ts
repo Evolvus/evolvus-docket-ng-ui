@@ -31,9 +31,8 @@ export class DocketSideNavigationComponent implements OnInit {
     this.docketSideForm.getFormData("").subscribe((response: any) => {
       this.filterOptionsLoaded = true; 
       this.applicationSelectionChanged = true;
-      console.log('docketSessionData', response);
+      this.sideNavFormData.statusOptions = response.data.statusOptions;
       this.sideNavFormData.applicationOptions = response.data.applicationOptions;
-      console.log(this.sideNavFormData.applicationOptions);
     });  
   }
 
@@ -53,7 +52,6 @@ export class DocketSideNavigationComponent implements OnInit {
     this.applicationSelectionChanged = false;
     this.sideNavFormData.sourcesOptions = [];
     this.sideNavFormData.createdByOptions = [];
-    console.log("this.sideNavData.application", this.sideNavData.application);
     this.docketSideForm.getFormData(this.sideNavData.application).subscribe((response: any) => {
       this.filterOptionsLoaded = true;
       this.applicationSelectionChanged = true;
